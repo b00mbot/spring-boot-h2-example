@@ -1,0 +1,1 @@
+INSERT INTO Recipe VALUES(1, 'Scrambled Eggs', 'A tasty recipe for scrambled eggs', 2);

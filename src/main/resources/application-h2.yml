@@ -11,5 +11,9 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+    data: classpath:data-h2.sql
+    schema: classpath:schema-h2.sql
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none # We disable this as we want to use our own schema definition script
