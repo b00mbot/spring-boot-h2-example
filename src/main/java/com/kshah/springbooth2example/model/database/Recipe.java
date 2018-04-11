@@ -4,16 +4,22 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-@Entity
+
 @Getter
 @Setter
 @ToString
+@Entity
+@Table(name = "RECIPE")
 public class Recipe {
 
     @Id
@@ -29,6 +35,10 @@ public class Recipe {
 
     @Column(name = "SERVINGS")
     private Integer servings;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "RECIPE_CATEGORY_ID")
+    private RecipeCategory recipeCategory;
 
 
     protected Recipe() {}
